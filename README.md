@@ -93,7 +93,7 @@ Deployment was carried out using Google Cloud Run
 
 To run the service, go to
 
-https://console.cloud.google.com/run/detail/us-west2/breast-cancer-diagnostic/revisions?project=galvanic-smoke-404607
+https://console.cloud.google.com/run/detail/us-central1/brain-cancer-detection/revisions?project=brain-cancer-detection-408719
 
 The URL is
 
@@ -114,4 +114,4 @@ and the expected output is (as before)
 {'prediction': 0.9496070146560669}
 Here is a screenshot of the service created on Google Cloud Run:
 
-<img src="https://github.com/Optimistix/Breast_Cancer_Classification_using_Wisconsin_Diagnostic_Data/blob/main/Google_Cloud_Run_Service_Screenshot.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
+<img src="https://github.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/blob/main/Google_Cloud_Run_Service_Screenshot_Brain_Cancer_Detection.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">

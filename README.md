@@ -1,17 +1,15 @@
 # Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H
 Deep Learning (Convolutional Neural Networks) to predict whether an MRI image is from a tumorous or non-tumorous sample 
 
-Data From: Br35H :: Brain Tumor Detection 2020 on Kaggle (https://www.kaggle.com/datasets/ahmedhamada0/brain-tumor-detection)
-
-✔️ Abstract
+## Problem Description
 A Brain tumor is considered as one of the aggressive diseases, among children and adults. Brain tumors account for 85 to 90 percent of all primary Central Nervous System(CNS) tumors. Every year, around 11,700 people are diagnosed with a brain tumor. The 5-year survival rate for people with a cancerous brain or CNS tumor is approximately 34 percent for men and36 percent for women. Brain Tumors are classified as: Benign Tumor, Malignant Tumor, Pituitary Tumor, etc. Proper treatment, planning, and accurate diagnostics should be implemented to improve the life expectancy of the patients. The best technique to detect brain tumors is Magnetic Resonance Imaging (MRI). A huge amount of image data is generated through the scans. These images are examined by the radiologist. A manual examination can be error-prone due to the level of complexities involved in brain tumors and their properties.
 Application of automated classification techniques using Machine Learning(ML) and Artificial Intelligence(AI)has consistently shown higher accuracy than manual classification. Hence, proposing a system performing detection and classification by using Deep Learning Algorithms using Convolution-Neural Network (CNN), Artificial Neural Network (ANN), and Transfer-Learning (TL) would be helpful to doctors all around the world.
 
-✔️ Context
 Brain Tumors are complex. There are a lot of abnormalities in the sizes and location of the brain tumor(s). This makes it really difficult for complete understanding of the nature of the tumor. Also, a professional Neurosurgeon is required for MRI analysis. Often times in developing countries the lack of skillful doctors and lack of knowledge about tumors makes it really challenging and time-consuming to generate reports from MRI’. So an automated system on Cloud can solve this problem.
 
-✔️ Definition
-To Detect and Classify Brain Tumor using, CNN and TL; as an asset of Deep Learning and to examine the tumor position(segmentation).
+## Data
+
+Data From: Br35H :: Brain Tumor Detection 2020 on Kaggle (https://www.kaggle.com/datasets/ahmedhamada0/brain-tumor-detection)
 
 ## Notebook
 The notebook includes
@@ -20,23 +18,26 @@ The notebook includes
         Model selection process and parameter tuning
 
 ## Script train.py
-The script training.py can be used to:
+The script train.py can be used to:
         Train the final model
         Save it to a file using pickle
 
 ## Script predict.py
 The script predict.py can be used to:
-        Load the model
-        Serve it via a web service Flask
+        Load the model (for use within Docker)
+        Define the Lambda handler
 
-You can execute predict.py and test.py to test the model on a single sample:
+Similarly, the script predict_outside_Docker.py can be used to:
+        Load the model (for use outside Docker, since we then need to use the tflite version included with Tensorflow)
+        Define the Lambda handler
 
-python predict.py
-python test.py
+You can execute predict_outside_Docker.py to locally test the model on a single sample (an MRI image from a tumorous sample):
+
+	python predict_outside_Docker.py
 
 The expected output is
 
-{'malignant': True, 'malignant_probability': 1.0}
+{'prediction': 0.9496070146560669}
 
 ## Files with dependencies
         Pipenv and Pipenv.lock
@@ -70,21 +71,21 @@ to test the saved model on 1 sample
 
 Build the Docker container:
 
-        docker build -t breast_cancer_diagnostic
+        docker build -t brain_cancer_detection .
 
 Run the Docker container:
 
-        docker run -it -p 9696:9696 breast_cancer_diagnostic:latest
+        docker run -it -p 8080:8080 brain_cancer_detection:latest
 
 As before, to test that the prediction app is running properly via Docker, you can type
 
         python test.py
 
-to test the saved model on 1 sample
+to test the saved model on 1 sample (an MRI image from a tumorous sample)
 
 and the expected output is
 
-{'malignant': True, 'malignant_probability': 1.0}
+{'prediction': 0.9496070146560669}
 
 ## Deployment
 
@@ -106,12 +107,11 @@ and once the container is running via Google Cloud Run, you can run
 
         python test_gcloud.py
 
-to test the saved model on 1 sample
+to test the saved model on 1 sample (an MRI image from a tumorous sample)
 
 and the expected output is (as before)
 
-{'malignant': True, 'malignant_probability': 1.0}  
-
+{'prediction': 0.9496070146560669}
 Here is a screenshot of the service created on Google Cloud Run:
 
 <img src="https://github.com/Optimistix/Breast_Cancer_Classification_using_Wisconsin_Diagnostic_Data/blob/main/Google_Cloud_Run_Service_Screenshot.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">

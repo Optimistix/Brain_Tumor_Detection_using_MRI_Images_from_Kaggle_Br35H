@@ -112,6 +112,7 @@ to test the saved model on 1 sample (an MRI image from a tumorous sample)
 and the expected output is (as before)
 
 {'prediction': 0.9496070146560669}
+
 Here is a screenshot of the service created on Google Cloud Run:
 
 <img src="https://github.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/blob/main/Google_Cloud_Run_Service_Screenshot_Brain_Cancer_Detection.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">

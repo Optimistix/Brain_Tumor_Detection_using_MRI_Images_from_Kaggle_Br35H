@@ -93,23 +93,21 @@ and the expected output is
 
 ## Deployment
 
-Deployment was carried out using Google Cloud Run
+Deployment was carried out using AWS Lambda (using the Docker image created previously), ECR and a REST API
 
 To run the service, go to
 
-https://console.cloud.google.com/run/detail/us-central1/brain-cancer-detection/revisions?project=brain-cancer-detection-408719
-
 The URL is
 
-https://brain-cancer-detection-t7hf2ys7ma-uc.a.run.app/
+https://jt48qss34g.execute-api.us-east-1.amazonaws.com/test/predict
 
-which is specified in
+which is specified/used in
 
-        test_gcloud.py
+        test_AWS.py
 
-and once the container is running via Google Cloud Run, you can run
+and once the container is running via AWS, you can run
 
-        python test_gcloud.py
+        python test_AWS.py
 
 to test the saved model on 1 sample (an MRI image from a tumorous sample)
 
@@ -117,6 +115,12 @@ and the expected output is (as before)
 
 {'prediction': 0.9496070146560669}
 
-Here is a screenshot of the service created on Google Cloud Run:
+Here are screenshots of the service created on AWS (Lambda function creation, Lambda function testing, API creation, Local testing using test_AWS.py):
 
-<img src="https://github.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/blob/main/Google_Cloud_Run_Service_Screenshot_Brain_Cancer_Detection.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
+<img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/AWS_Lambda_Function_Created.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
+
+<img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/AWS_Lambda_Function_Tested.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
+
+<img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/AWS_Lambda_Function_ested_Locally_using_AWS_URL.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
+and finally, an MRI image from a tumorous sample that was used for testing:
+<img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/y234.jpg" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">

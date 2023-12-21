@@ -99,7 +99,7 @@ https://console.cloud.google.com/run/detail/us-central1/brain-cancer-detection/r
 
 The URL is
 
-https://breast-cancer-diagnostic-e7c74nc6ea-wl.a.run.app/
+https://brain-cancer-detection-t7hf2ys7ma-uc.a.run.app/
 
 which is specified in
 

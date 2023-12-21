@@ -121,6 +121,6 @@ Here are screenshots of the service created on AWS (Lambda function creation, La
 
 <img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/AWS_Lambda_Function_Tested.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
 
-<img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/AWS_Lambda_Function_ested_Locally_using_AWS_URL.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
+<img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/AWS_Lambda_Function_Tested_Locally_using_AWS_URL.png" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">
 and finally, an MRI image from a tumorous sample that was used for testing:
 <img src="https://raw.githubusercontent.com/Optimistix/Brain_Tumor_Detection_using_MRI_Images_from_Kaggle_Br35H/main/y234.jpg" style="display:block;float:none;margin-left:auto;margin-right:auto;width:100%">

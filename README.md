@@ -12,10 +12,12 @@ Brain Tumors are complex. There are a lot of abnormalities in the sizes and loca
 Data From: Br35H :: Brain Tumor Detection 2020 on Kaggle (https://www.kaggle.com/datasets/ahmedhamada0/brain-tumor-detection)
 
 ## Notebook
-The notebook includes
+The notebook notebook.ipynb includes
         Data preparation and data cleaning
-        EDA, feature importance analysis
+        EDA
         Model selection process and parameter tuning
+
+The notebook Test_tflite_model_on_MRI_samples.ipynb can be used to load the Tensorflow-lite model saved for deployment, and test it on two MRI images, one from a tumorous sample and one from a non-tumorous sample (both are classified correctly). 
 
 ## Script train.py
 The script train.py can be used to:

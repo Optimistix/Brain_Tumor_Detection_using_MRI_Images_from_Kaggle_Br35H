@@ -24,7 +24,12 @@ The notebook Test_tflite_model_on_MRI_samples.ipynb can be used to load the Tens
 ## Script train.py
 The script train.py can be used to:
         Train the final model
-        Save it to a file using pickle
+        Save it to a file in the .h5 format (which is then converted to tflite using convert.py)
+
+## Script convert.py
+The script convert.py can be used to:
+        Load the model previously saved in .h5 format, convert it tflite format, and save
+
 
 ## Script predict.py
 The script predict.py can be used to:
